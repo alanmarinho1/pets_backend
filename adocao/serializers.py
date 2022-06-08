@@ -6,11 +6,13 @@ from .models import Adocao
 from pets.serializers import PetsSerializer
 from pets.models import Pets
 
+
 class AdocaoSerializer(serializers.ModelSerializer):
     pets = PetsSerializer(many=False, read_only=True)
     pets_id = serializers.PrimaryKeyRelatedField(
         many=False, write_only=True, queryset=Pets.objects.all()
     )
+
     class Meta:
         model = Adocao
         fields = ("id", "valor", "email", "pets", "pets_id")

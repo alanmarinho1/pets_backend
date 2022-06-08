@@ -9,17 +9,30 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('pets', '0001_initial'),
+        ("pets", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Adocao',
+            name="Adocao",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('valor', models.DecimalField(decimal_places=2, max_digits=5)),
-                ('email', models.EmailField(max_length=255)),
-                ('pets', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pets.pets')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("valor", models.DecimalField(decimal_places=2, max_digits=5)),
+                ("email", models.EmailField(max_length=255)),
+                (
+                    "pets",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="pets.pets"
+                    ),
+                ),
             ],
         ),
     ]
